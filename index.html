@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="push.css">
+</head>
+<body> 
+    <header>
+         <h1>hello world!</h1>
+    </header>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Fatorial</title>
+    <link rel="stylesheet" href="tela_calculadora.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora - S.A</h1>
+        <p>Fatorial</p>
+    </header>
+
+    <div class="container">
+        <div class="calc-section">
+            <h2>Fatorial</h2>
+            <input type="number" id="numFatorial" placeholder="Digite o número (ex: 5)">
+            <br><br>
+            <button onclick="calcularFatorial()">Calcular !</button>
+            <p id="resultadoFatorial" class="resultado"></p>
+        </div>
+
+
+
+    <script>
+        function fatorial(n) {
+            if (n < 0) {
+                return "Erro: Fatorial não definido para negativos!";
+            }
+            let resultado = 1;
+            for (let i = 1; i <= n; i++) {
+                resultado *= i;
+            }
+            return resultado;
+        }
+
+       
+
+        function calcularFatorial() {
+            let n = parseInt(document.getElementById('numFatorial').value);
+            if (isNaN(n)) {
+                document.getElementById('resultadoFatorial').textContent = 'Digite um número válido!';
+                return;
+            }
+            document.getElementById('resultadoFatorial').textContent = `${n}! = ${fatorial(n)}`;
+        }
+
+      
+    </script>
+</body>
+</html>
+

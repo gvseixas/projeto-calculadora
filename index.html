@@ -65,3 +65,45 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Exponenciação</title>
+    <link rel="stylesheet" href="tela_calculadora.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora - S.A</h1>
+        <p>Exponenciação</p>
+    </header>
+
+        <div class="calc-section">
+            <h2>Exponenciação</h2>
+            <input type="number" step="any" id="base" placeholder="Base (ex: 2)">
+            <input type="number" step="any" id="expoente" placeholder="Expoente (ex: 3)">
+            <br><br>
+            <button onclick="calcularExponenciacao()">Calcular ^</button>
+            <p id="resultadoExp" class="resultado"></p>
+        </div>
+    </div>
+
+    <script>
+        function exponenciacao(base, expoente) {
+            return base ** expoente;
+        }
+
+        function calcularExponenciacao() {
+            let base = parseFloat(document.getElementById('base').value);
+            let expoente = parseFloat(document.getElementById('expoente').value);
+            if (isNaN(base) || isNaN(expoente)) {
+                document.getElementById('resultadoExp').textContent = 'Digite números válidos!';
+                return;
+            }
+            document.getElementById('resultadoExp').textContent = `${base}^${expoente} = ${exponenciacao(base, expoente)}`;
+        }
+    </script>
+</body>
+</html>
+

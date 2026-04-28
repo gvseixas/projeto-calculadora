@@ -35,8 +35,9 @@
             <input type="number" step="any" id="subNum1" placeholder="Número 1">
             <input type="number" step="any" id="subNum2" placeholder="Número 2">
             <br><br>
-            <button id="btnSubtracao">Calcular -</button>
+            <button onclick="calcularSubtracao()">Calcular -</button>
             <p id="resultadoSub" class="resultado"></p>
+        </div>
 
     </div>
 
@@ -58,7 +59,7 @@
 
         function subtracao(n1, n2) {
             return n1 - n2;
-    }
+        }
 
         function calcularFatorial() {
             let n = parseInt(document.getElementById('numFatorial').value);
@@ -83,7 +84,7 @@
         let n1 = parseFloat(document.getElementById('subNum1').value);
         let n2 = parseFloat(document.getElementById('subNum2').value);
         if (isNaN(n1) || isNaN(n2)) {
-            document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
+        document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
             return;
         }
         document.getElementById('resultadoSub').textContent = `${n1} - ${n2} = ${subtracao(n1, n2)}`;

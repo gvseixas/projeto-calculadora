@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - Soma, Subtração, Fatorial e Exponenciação</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -106,7 +107,18 @@
         let n1 = parseFloat(document.getElementById('subNum1').value);
         let n2 = parseFloat(document.getElementById('subNum2').value);
         if (isNaN(n1) || isNaN(n2)) {
-            document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
+        document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
+            return;
+        }
+        document.getElementById('resultadoSub').textContent = `${n1} - ${n2} = ${subtracao(n1, n2)}`;
+    }
+
+
+        function calcularSubtracao() {
+        let n1 = parseFloat(document.getElementById('subNum1').value);
+        let n2 = parseFloat(document.getElementById('subNum2').value);
+        if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
             return;
         }
         document.getElementById('resultadoSub').textContent = `${n1} - ${n2} = ${subtracao(n1, n2)}`;

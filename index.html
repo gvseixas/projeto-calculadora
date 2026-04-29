@@ -96,7 +96,15 @@
             }
             document.getElementById('resultadoMult').textContent = `${n1} × ${n2} = ${multiplicacao(n1, n2)}`;
         }
-
+        function calcularDivisao() {
+            let n1 = parseFloat(document.getElementById('divNum1').value);
+            let n2 = parseFloat(document.getElementById('divNum2').value);
+            if (isNaN(n1) || isNaN(n2)) {
+                document.getElementById('resultadoDiv').textContent = 'Digite números válidos!';
+                return;
+            }
+            document.getElementById('resultadoDiv').textContent = `${n1} ÷ ${n2} = ${divisao(n1, n2)}`;
+        }
     }
 
     </script>

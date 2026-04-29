@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora - Fatorial e Exponenciação</title>
+    <title>Calculadora - Soma, Subtração, Fatorial e Exponenciação</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Calculadora - S.A</h1>
+        <h1>Calculadora - Soma, Subtração, Fatorial e Exponenciação</h1>
         <p>Fatorial e Exponenciação</p>
     </header>
 
@@ -35,9 +36,36 @@
             <input type="number" step="any" id="subNum1" placeholder="Número 1">
             <input type="number" step="any" id="subNum2" placeholder="Número 2">
             <br><br>
-            <button id="btnSubtracao">Calcular -</button>
-            <p id="resultadoSub" class="resultado"></p>
+<button onclick="calcularSubtracao()">Calcular -</button>
+        <p id="resultadoSub" class="resultado"></p>
+        </div>
 
+        <div class="calc-section">
+            <h2>Soma</h2>
+            <input type="number" step="any" id="somaNum1" placeholder="Número 1">
+            <input type="number" step="any" id="somaNum2" placeholder="Número 2">
+            <br><br>
+            <button onclick="calcularSoma()">Calcular +</button>
+            <p id="resultadoSoma" class="resultado"></p>
+        </div>
+
+        <div class="calc-section">
+            <h2>Multipulcacao</h2>
+            <input type="number" step="any" id="somaNum1" placeholder="Número 1">
+            <input type="number" step="any" id="somaNum2" placeholder="Número 2">
+            <br><br>
+            <button onclick="calcularSoma()">Calcular .</button>
+            <p id="resultadoSoma" class="resultado"></p>
+        </div>
+
+        <div class="calc-section">
+            <h2>Divisao</h2>
+            <input type="number" step="any" id="somaNum1" placeholder="Número 1">
+            <input type="number" step="any" id="somaNum2" placeholder="Número 2">
+            <br><br>
+            <button onclick="calcularSoma()">Calcular /</button>
+            <p id="resultadoSoma" class="resultado"></p>
+        </div>
     </div>
 
     <script>
@@ -58,7 +86,21 @@
 
         function subtracao(n1, n2) {
             return n1 - n2;
-    }
+        }
+
+        function soma(n1, n2) {
+            return n1 + n2;
+        }
+
+        function calcularSoma() {
+            let n1 = parseFloat(document.getElementById('somaNum1').value);
+            let n2 = parseFloat(document.getElementById('somaNum2').value);
+            if (isNaN(n1) || isNaN(n2)) {
+                document.getElementById('resultadoSoma').textContent = 'Digite números válidos!';
+                return;
+            }
+            document.getElementById('resultadoSoma').textContent = `${n1} + ${n2} = ${soma(n1, n2)}`;
+        }
 
         function calcularFatorial() {
             let n = parseInt(document.getElementById('numFatorial').value);
@@ -83,22 +125,32 @@
         let n1 = parseFloat(document.getElementById('subNum1').value);
         let n2 = parseFloat(document.getElementById('subNum2').value);
         if (isNaN(n1) || isNaN(n2)) {
-            document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
+        document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
             return;
         }
         document.getElementById('resultadoSub').textContent = `${n1} - ${n2} = ${subtracao(n1, n2)}`;
-        function calcularMultiplicacao() {
-            let n1 = parseFloat(document.getElementById('multNum1').value);
-            let n2 = parseFloat(document.getElementById('multNum2').value);
-            if (isNaN(n1) || isNaN(n2)) {
-                document.getElementById('resultadoMult').textContent = 'Digite números válidos!';
-                return;
-            }
-            document.getElementById('resultadoMult').textContent = `${n1} × ${n2} = ${multiplicacao(n1, n2)}`;
-        }
-
     }
 
+
+        function calcularMultiplicacao() {
+        let n1 = parseFloat(document.getElementById('subNum1').value);
+        let n2 = parseFloat(document.getElementById('subNum2').value);
+        if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
+            return;
+        }
+        document.getElementById('resultadoSub').textContent = `${n1} . ${n2} = ${subtracao(n1, n2)}`;
+
+        function calcularDivisao() {
+        let n1 = parseFloat(document.getElementById('subNum1').value);
+        let n2 = parseFloat(document.getElementById('subNum2').value);
+        if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
+            return;
+        }
+        document.getElementById('resultadoSub').textContent = `${n1} / ${n2} = ${subtracao(n1, n2)}`;
+    }
+        }
     </script>
 </body>
 </html>

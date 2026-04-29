@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - Fatorial e Exponenciação</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -39,6 +40,15 @@
             <p id="resultadoSub" class="resultado"></p>
         </div>
 
+    
+        <div class="calc-section">
+            <h2>Subtração</h2>
+            <input type="number" step="any" id="subNum1" placeholder="Número 1">
+            <input type="number" step="any" id="subNum2" placeholder="Número 2">
+            <br><br>
+            <button id="btnSubtracao">Calcular -</button>
+            <p id="resultadoSub" class="resultado"></p>
+
     </div>
 
     <script>
@@ -59,7 +69,7 @@
 
         function subtracao(n1, n2) {
             return n1 - n2;
-        }
+    }
 
         function calcularFatorial() {
             let n = parseInt(document.getElementById('numFatorial').value);
@@ -79,6 +89,17 @@
             }
             document.getElementById('resultadoExp').textContent = `${base}^${expoente} = ${exponenciacao(base, expoente)}`;
         }
+
+        function calcularSubtracao() {
+        let n1 = parseFloat(document.getElementById('subNum1').value);
+        let n2 = parseFloat(document.getElementById('subNum2').value);
+        if (isNaN(n1) || isNaN(n2)) {
+            document.getElementById('resultadoSub').textContent = 'Digite números válidos!';
+            return;
+        }
+        document.getElementById('resultadoSub').textContent = `${n1} - ${n2} = ${subtracao(n1, n2)}`;
+    }
+
 
         function calcularSubtracao() {
         let n1 = parseFloat(document.getElementById('subNum1').value);
